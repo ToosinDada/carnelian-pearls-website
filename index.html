@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carnelian & Pearls IT Consulting - ServiceNow Excellence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ff6b35;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: #e0e0e0;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            padding: 2rem 0;
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #ff6b35;
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #f7931e;
+        }
+
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h3 {
+            color: #ff6b35;
+            margin-bottom: 1rem;
+        }
+
+        /* Founder Profile Styles */
+        .founder-profile {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .founder-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: bold;
+            color: white;
+            margin: 0 auto;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .founder-info h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #ff6b35;
+        }
+
+        .founder-title {
+            font-size: 1.3rem;
+            color: #f7931e;
+            margin-bottom: 1.5rem;
+        }
+
+        .founder-bio {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .achievement {
+            background: rgba(255, 107, 53, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+        }
+
+        .achievement-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff6b35;
+        }
+
+        .achievement-text {
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+
+        /* Resource Cards */
+        .resource-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .resource-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .resource-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            margin-right: 1rem;
+        }
+
+        .resource-info h4 {
+            color: #ff6b35;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-title {
+            color: #f7931e;
+            font-size: 1rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .skill-tag {
+            background: rgba(255, 107, 53, 0.2);
+            color: #ff6b35;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+        }
+
+        .contact-btn {
+            background: linear-gradient(45deg, #f7931e, #ff6b35);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ff6b35;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #ff6b35;
+            box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #ff6b35;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: #e0e0e0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #ff6b35;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-profile {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .founder-image {
+                width: 200px;
+                height: 200px;
+                font-size: 3rem;
+            }
+
+            .resource-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .resource-avatar {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Carnelian & Pearls IT</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" onclick="showPage('home')" class="active">Home</a></li>
+                <li><a href="#" onclick="showPage('about')">About Us</a></li>
+                <li><a href="#" onclick="showPage('founder')">Meet the Founder</a></li>
+                <li><a href="#" onclick="showPage('services')">Services</a></li>
+                <li><a href="#" onclick="showPage('portfolio')">Portfolio</a></li>
+                <li><a href="#" onclick="showPage('resources')">Nigerian Resources</a></li>
+                <li><a href="#" onclick="showPage('testimonials')">Testimonials</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <section class="hero">
+                <h1>Carnelian & Pearls IT Consulting</h1>
+                <p>Transforming businesses through intelligent ServiceNow automation and digital workflows with over 13 years of expertise</p>
+                <a href="#" onclick="showPage('contact')" class="cta-button">Get Started</a>
+            </section>
+
+            <section class="section">
+                <h2>Why Choose Carnelian & Pearls IT?</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>13+ Years Experience</h3>
+                        <p>Extensive experience in ServiceNow implementation, customization, and optimization across various industries with proven results.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Nigerian Excellence</h3>
+                        <p>Proudly Nigerian-founded, connecting global clients with top-tier local ServiceNow talent and expertise.</p>
+                    </div>
+                    <div class="card">
+                        <h3>End-to-End Solutions</h3>
+                        <p>From strategy and planning to implementation and support, we provide comprehensive ServiceNow solutions.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page">
+            <section class="section">
+                <h2>About Carnelian & Pearls IT Consulting</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Our Mission</h3>
+                        <p>To empower organizations across Africa and globally with intelligent automation solutions that drive efficiency, reduce costs, and enhance user experience through the ServiceNow platform.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Our Vision</h3>
+                        <p>To be the leading ServiceNow consulting firm bridging the gap between global enterprise needs and exceptional Nigerian IT talent.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Our Values</h3>
+                        <p>Excellence, Innovation, Integrity, and Cultural Pride. We believe in showcasing the best of Nigerian technical expertise on the global stage.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Founder Profile Page -->
+        <div id="founder" class="page">
+            <section class="section">
+                <h2>Meet the Founder</h2>
+                
+                <div class="founder-profile">
+                    <div class="founder-image">TD</div>
+                    <div class="founder-info">
+                        <h3>Tosin Dada</h3>
+                        <div class="founder-title">Founder & Senior ServiceNow Consultant</div>
+                        <div class="founder-bio">
+                            <p>Tosin Dada is the visionary founder of Carnelian & Pearls IT Consulting, bringing over 13 years of deep expertise in the ServiceNow ecosystem. With a passion for digital transformation and a commitment to excellence, Tosin has built a reputation as one of Nigeria's leading ServiceNow consultants.</p>
+                            
+                            <p>His journey began with a vision to bridge the gap between global enterprise needs and the exceptional technical talent available in Nigeria. Through Carnelian & Pearls IT, Tosin has successfully delivered transformative ServiceNow solutions to organizations across multiple continents.</p>
+                            
+                            <p>Tosin's expertise spans across ITSM, ITOM, HRSD, CSM, and custom application development, with a particular strength in complex integrations and platform optimization. His leadership philosophy centers on empowering teams, fostering innovation, and maintaining the highest standards of service delivery.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="achievements">
+                    <div class="achievement">
+                        <div class="achievement-number">13+</div>
+                        <div class="achievement-text">Years Experience</div>
+                    </div>
+                    <div class="achievement">
+                        <div class="achievement-number">50+</div>
+                        <div class="achievement-text">Projects Delivered</div>
+                    </div>
+                    <div class="achievement">
+                        <div class="achievement-number">15+</div>
+                        <div class="achievement-text">Countries Served</div>
+                    </div>
+                    <div class="achievement">
+                        <div class="achievement-number">100%</div>
+                        <div class="achievement-text">Client Satisfaction</div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="card">
+                        <h3>Professional Certifications</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>✓ ServiceNow Certified System Administrator (CSA)</li>
+                            <li>✓ ServiceNow Certified Implementation Specialist (CIS)</li>
+                            <li>✓ ServiceNow Certified Application Developer</li>
+                            <li>✓ ITIL Foundation Certified</li>
+                            <li>✓ Project Management Professional (PMP)</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Technical Expertise</h3>
+                        <div class="skills">
+                            <span class="skill-tag">ServiceNow Platform</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">REST/SOAP APIs</span>
+                            <span class="skill-tag">ITSM</span>
+                            <span class="skill-tag">ITOM</span>
+                            <span class="skill-tag">HRSD</span>
+                            <span class="skill-tag">CSM</span>
+                            <span class="skill-tag">Integration Hub</span>
+                            <span class="skill-tag">Flow Designer</span>
+                            <span class="skill-tag">Performance Analytics</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Leadership Philosophy</h3>
+                        <p>"Success in technology consulting isn't just about technical expertise—it's about understanding people, processes, and culture. At Carnelian & Pearls IT, we don't just implement systems; we transform organizations while celebrating the incredible talent that Nigeria has to offer the world."</p>
+                        <p style="margin-top: 1rem; font-style: italic;">- Tosin Dada, Founder</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Services Page -->
+        <div id="services" class="page">
+            <section class="section">
+                <h2>Our Services</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>ServiceNow Implementation</h3>
+                        <p>Complete ServiceNow platform setup, configuration, and deployment tailored to your business needs with best practices.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Custom Application Development</h3>
+                        <p>Build custom applications and workflows to address unique business requirements and processes.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Integration Services</h3>
+                        <p>Seamlessly integrate ServiceNow with existing systems using REST/SOAP APIs and middleware solutions.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Platform Optimization</h3>
+                        <p>Performance tuning, best practices implementation, and platform health assessments.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Training & Support</h3>
+                        <p>Comprehensive training programs and ongoing support to maximize your ServiceNow investment.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Nigerian Talent Sourcing</h3>
+                        <p>Connect with vetted Nigerian ServiceNow professionals for your projects and long-term needs.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Portfolio Page -->
+        <div id="portfolio" class="page">
+            <section class="section">
+                <h2>Our Portfolio</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Global Financial Services ITSM</h3>
+                        <p>Led a comprehensive ITSM implementation for a multinational bank, resulting in 40% reduction in incident resolution time and improved service quality across 12 countries.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Healthcare HR Service Delivery</h3>
+                        <p>Designed and implemented an HRSD portal for a major healthcare provider, streamlining HR processes and reducing manual work by 60%.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Manufacturing Asset Management</h3>
+                        <p>Developed a custom asset management solution with automated workflows, saving the client $2M annually in operational costs.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Multi-System Integration Project</h3>
+                        <p>Integrated ServiceNow with SAP, Salesforce, and Active Directory for a Fortune 500 company, creating a unified digital workplace experience.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Nigerian Resources Page -->
+        <div id="resources" class="page">
+            <section class="section">
+                <h2>ServiceNow Nigerian Resources</h2>
+                <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem;">Connect with skilled ServiceNow professionals in Nigeria for your projects. All resources are vetted by Carnelian & Pearls IT and have proven experience in ServiceNow implementations.</p>
+                
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-avatar">AO</div>
+                        <div class="resource-info">
+                            <h4>Adebayo Ogundimu</h4>
+                            <div class="resource-title">Senior ServiceNow Developer</div>
+                        </div>
+                    </div>
+                    <p>Specialized in ServiceNow ITSM, ITOM, and custom application development. 8+ years experience with expertise in JavaScript, REST APIs, and workflow automation.</p>
+                    <div class="skills">
+                        <span class="skill-tag">ITSM</span>
+                        <span class="skill-tag">ITOM</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Workflow</span>
+                    </div>
+                    <a href="mailto:info@carnelianpearls.com?subject=Resource Inquiry - Adebayo Ogundimu" class="contact-btn">Request Contact</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-avatar">FO</div>
+                        <div class="resource-info">
+                            <h4>Funmi Olaleye</h4>
+                            <div class="resource-title">ServiceNow Business Analyst</div>
+                        </div>
+                    </div>
+                    <p>Expert in requirements gathering, process mapping, and ServiceNow configuration. Strong background in HRSD and CSM implementations with excellent stakeholder management skills.</p>
+                    <div class="skills">
+                        <span class="skill-tag">HRSD</span>
+                        <span class="skill-tag">CSM</span>
+                        <span class="skill-tag">Business Analysis</span>
+                        <span class="skill-tag">Process Mapping</span>
+                        <span class="skill-tag">Configuration</span>
+                    </div>
+                    <a href="mailto:info@carnelianpearls.com?subject=Resource Inquiry - Funmi Olaleye" class="contact-btn">Request Contact</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-avatar">KA</div>
+                        <div class="resource-info">
+                            <h4>Kemi Adebisi</h4>
+                            <div class="resource-title">ServiceNow Integration Specialist</div>
+                        </div>
+                    </div>
+                    <p>Focused on ServiceNow integrations with third-party systems. Extensive experience with MID Server, REST/SOAP web services, and data migration projects.</p>
+                    <div class="skills">
+                        <span class="skill-tag">Integrations</span>
+                        <span class="skill-tag">MID Server</span>
+                        <span class="skill-tag">Web Services</span>
+                        <span class="skill-tag">Data Migration</span>
+                        <span class="skill-tag">ETL</span>
+                    </div>
+                    <a href="mailto:info@carnelianpearls.com?subject=Resource Inquiry - Kemi Adebisi" class="contact-btn">Request Contact</a>
+                </div>
+
+                <div class="section">
+                    <h3>Request Resources for Your Project</h3>
+                    <div class="card">
+                        <form>
+                            <div class="form-group">
+                                <label for="project-type">Project Type</label>
+                                <select id="project-type" name="project-type">
+                                    <option value="">Select Project Type</option>
+                                    <option value="itsm">ITSM Implementation</option>
+                                    <option value="hrsd">HRSD Implementation</option>
+                                    <option value="csm">CSM Implementation</option>
+                                    <option value="custom-dev">Custom Development</option>
+                                    <option value="integration">Integration Project</option>
+                                    <option value="optimization">Platform Optimization</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="project-duration">Expected Duration</label>
+                                <select id="project-duration" name="project-duration">
+                                    <option value="">Select Duration</option>
+                                    <option value="1-3months">1-3 months</option>
+                                    <option value="3-6months">3-6 months</option>
+                                    <option value="6-12months">6-12 months</option>
+                                    <option value="12months+">12+ months</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="team-size">Required Team Size</label>
+                                <select id="team-size" name="team-size">
+                                    <option value="">Select Team Size</option>
+                                    <option value="1">1 Resource</option>
+                                    <option value="2-3">2-3 Resources</option>
+                                    <option value="4-6">4-6 Resources</option>
+                                    <option value="6+">6+ Resources</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="skills-required">Skills Required</label>
+                                <textarea id="skills-required" name="skills-required" rows="3" placeholder="Describe the specific ServiceNow skills and experience required for your project..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="project-details">Project Details</label>
+                                <textarea id="project-details" name="project-details" rows="4" placeholder="Provide additional details about your project, timeline, and requirements..."></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Submit Resource Request</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Testimonials Page -->
+        <div id="testimonials" class="page">
+            <section class="section">
+                <h2>Client Testimonials</h2>
+                <div class="cards">
+                    <div class="card">
+                        <p>"Carnelian & Pearls IT transformed our ServiceNow implementation. Tosin's expertise and his team's dedication resulted in a 50% reduction in our incident resolution time."</p>
+                        <h3>- Sarah Johnson, IT Director, Global Bank</h3>
+                    </div>
+                    <div class="card">
+                        <p>"Working with Tosin and his team was exceptional. Their deep understanding of ServiceNow and ability to deliver on time and budget is outstanding."</p>
+                        <h3>- Michael Chen, CTO, Healthcare Corp</h3>
+                    </div>
+                    <div class="card">
+                        <p>"The Nigerian talent that Carnelian & Pearls connected us with exceeded all expectations. Highly skilled, professional, and cost-effective."</p>
+                        <h3>- Emily Rodriguez, Operations Manager</h3>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <section class="section">
+                <h2>Get In Touch</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Contact Information</h3>
+                        <p><strong>Email:</strong> info@carnelianpearls.com</p>
+                        <p><strong>Founder:</strong> tosin@carnelianpearls.com</p>
+                        <p><strong>Phone:</strong> +234 (0) 123 456 7890</p>
+                        <p><strong>Location:</strong> Lagos, Nigeria</p>
+                        <p><strong>LinkedIn:</strong> linkedin.com/company/carnelian-pearls-it</p>
+                    </div>
+                    <div class="card">
+                        <h3>Send a Message</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="#" onclick="showPage('services')">ServiceNow Implementation</a>
+                    <a href="#" onclick="showPage('services')">Custom Development</a>
+                    <a href="#" onclick="showPage('services')">Integration Services</a>
+                    <a href="#" onclick="showPage('services')">Nigerian Talent Sourcing</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <a href="#" onclick="showPage('about')">About Us</a>
+                    <a href="#" onclick="showPage('founder')">Meet the Founder</a>
+                    <a href="#" onclick="showPage('portfolio')">Portfolio</a>
+                    <a href="#" onclick="showPage('testimonials')">Testimonials</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="#" onclick="showPage('resources')">Nigerian Talent Pool</a>
+                    <a href="mailto:info@carnelianpearls.com">Email Us</a>
+                    <a href="#" onclick="showPage('contact')">Contact Form</a>
+                </div>
+            </div>
+            <p>&copy; 2024 Carnelian & Pearls IT Consulting. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Close mobile menu if open
+            document.getElementById('navLinks').classList.remove('active');
+        }
+
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Form submission handlers
+        document.addEventListener('DOMContentLoaded', function() {
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message! We will get back to you soon.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
