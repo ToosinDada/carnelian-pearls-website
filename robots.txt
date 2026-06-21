@@ -1,0 +1,7 @@
+# CarnelianPearls Tech - robots.txt
+# Allow all crawlers, full access.
+User-agent: *
+Allow: /
+
+# Update the hostname if the live domain differs from carnelianandpearls.com.
+Sitemap: https://carnelianandpearls.com/sitemap.xml

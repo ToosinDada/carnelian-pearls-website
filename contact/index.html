@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Contact | Start a Conversation | CarnelianPearls Tech</title>
+  <meta name="description" content="Tell us what you are working on. Choose the area that fits, and we will route your message to the right place. Email info@carnelianandpearls.com.">
+  <link rel="canonical" href="https://carnelianandpearls.com/contact/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CarnelianPearls Tech">
+  <meta property="og:title" content="Contact | Start a Conversation | CarnelianPearls Tech">
+  <meta property="og:description" content="Tell us what you are working on. We will tell you how we can help.">
+  <meta property="og:url" content="https://carnelianandpearls.com/contact/">
+  <meta property="og:image" content="https://carnelianandpearls.com/assets/img/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact | CarnelianPearls Tech">
+  <meta name="twitter:description" content="Start a conversation with CarnelianPearls Tech.">
+  <meta name="twitter:image" content="https://carnelianandpearls.com/assets/img/og-image.png">
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#FBFAF7">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script defer src="../assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================= HEADER ============================= -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <!-- LOGO SLOT: swap the inline SVG + text below for an SVG logo when ready -->
+      <a class="brand" href="../" aria-label="CarnelianPearls Tech, home">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <path d="M16 3 L28 14 L16 29 L4 14 Z" fill="#B7410E"/>
+          <circle cx="16" cy="15" r="4.6" fill="#F4F1EA"/>
+        </svg>
+        <span class="brand__name">Carnelian<b>Pearls</b> Tech</span>
+      </a>
+
+      <div class="header-actions">
+        <nav class="nav" id="primary-nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="../partnerships/">Partnerships</a></li>
+            <li><a class="nav__link" href="../venture-studio/">Venture Studio</a></li>
+            <li><a class="nav__link" href="../opportunities/">Opportunities <span class="pill">Forming</span></a></li>
+            <li><a class="nav__link" href="../about/">About</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn--primary btn--small" href="../contact/" aria-current="page">Contact</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span class="visually-hidden">Menu</span>
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================== INTRO =========================== -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="prose">
+          <p class="eyebrow">Contact</p>
+          <h1>Start a conversation</h1>
+          <p class="lead">Tell us what you are working on. Select the area that fits, and we will route your message to the right place.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACT GRID ===================== -->
+    <section class="section section--tight" aria-label="Contact options">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- JS-enhanced form. Composes a mailto on submit. -->
+          <div class="form-card">
+            <h2 class="mt-0">Send us a message</h2>
+            <form id="contact-form" data-email="info@carnelianandpearls.com" novalidate>
+              <div class="field">
+                <label for="category">I'm interested in</label>
+                <select id="category" name="category">
+                  <option value="partnership">A partnership or introduction</option>
+                  <option value="venture">The Venture Studio or a product</option>
+                  <option value="opportunity">An opportunity or the marketplace</option>
+                  <option value="other">Something else</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="company">Company <span class="optional">(optional)</span></label>
+                <input id="company" name="company" type="text" autocomplete="organization">
+              </div>
+              <div class="field">
+                <label for="message">Tell us briefly what you need</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </div>
+              <button class="btn btn--primary btn--block" type="submit">Send</button>
+              <p class="form-note">This opens your own email app with the message ready to send. Nothing is submitted to a server.</p>
+              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+              <noscript>
+                <p class="form-note">JavaScript is off, so this button cannot compose the email for you. Please use one of the direct links to the right.</p>
+              </noscript>
+            </form>
+          </div>
+
+          <!-- No-JS baseline. Always visible and usable on its own. -->
+          <aside class="direct-card">
+            <h2 class="mt-0">Prefer to email directly?</h2>
+            <p>Write to us at:</p>
+            <p class="email-line"><a href="mailto:info@carnelianandpearls.com">info@carnelianandpearls.com</a></p>
+            <p>Or pick the area that fits and we will open a message for you:</p>
+            <ul class="intent-list">
+              <li><a href="mailto:info@carnelianandpearls.com?subject=Partnership%20enquiry">Partnership or introduction</a></li>
+              <li><a href="mailto:info@carnelianandpearls.com?subject=Venture%20Studio%20enquiry">Venture Studio or a product</a></li>
+              <li><a href="mailto:info@carnelianandpearls.com?subject=Opportunity%20enquiry">An opportunity or the marketplace</a></li>
+              <li><a href="mailto:info@carnelianandpearls.com?subject=General%20enquiry">Something else</a></li>
+            </ul>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================= FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="brand" href="../" aria-label="CarnelianPearls Tech, home">
+            <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+              <path d="M16 3 L28 14 L16 29 L4 14 Z" fill="#B7410E"/>
+              <circle cx="16" cy="15" r="4.6" fill="#F4F1EA"/>
+            </svg>
+            <span class="brand__name">Carnelian<b>Pearls</b> Tech</span>
+          </a>
+          <p class="footer__tag">Identify opportunities. Build solutions. Create value.</p>
+        </div>
+        <div class="footer__cols">
+          <div class="footer__col">
+            <h3>What we do</h3>
+            <ul>
+              <li><a href="../partnerships/">Partnerships</a></li>
+              <li><a href="../venture-studio/">Venture Studio</a></li>
+              <li><a href="../opportunities/">Opportunities</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="../about/">About</a></li>
+              <li><a class="ext" href="[TASKA_URL]" target="_blank" rel="noopener">Taska</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h3>Get in touch</h3>
+            <ul>
+              <li><a href="../contact/">Contact</a></li>
+              <li><a href="mailto:info@carnelianandpearls.com">info@carnelianandpearls.com</a></li>
+              <li><a class="ext" href="[LINKEDIN_URL]" target="_blank" rel="noopener">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <p>CarnelianPearls Tech Ltd &middot; Registered in Nigeria &middot; RC [RC_NUMBER]<br>
+        [REGISTERED_ADDRESS]</p>
+        <p>&copy; 2026 CarnelianPearls Tech Ltd &middot; <a href="../privacy/">Privacy</a> &middot; <a href="../terms/">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

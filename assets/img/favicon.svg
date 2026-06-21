@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="CarnelianPearls Tech">
+  <rect width="32" height="32" rx="7" fill="#1A1714"/>
+  <!-- carnelian facet: drive and decisive action -->
+  <path d="M16 5 L26 14 L16 27 L6 14 Z" fill="#B7410E"/>
+  <!-- pearl: value found, not made -->
+  <circle cx="16" cy="15" r="4.4" fill="#F4F1EA"/>
+  <circle cx="14.4" cy="13.4" r="1.5" fill="#FFFFFF" opacity="0.85"/>
+</svg>
