@@ -80,7 +80,7 @@ search. Search the whole `site/` folder for the token in brackets.
 
 | Token | What it is | Where it appears |
 |---|---|---|
-| `[TASKA_URL]` | The live GetTaska link | Home (In focus button), Venture Studio (2 buttons), every footer "GetTaska" link, Home JSON-LD `sameAs` |
+| `[TASKA_URL]` | The GetTaska link | Home (In focus button), Venture Studio (2 buttons), every footer "GetTaska" link, Home JSON-LD `sameAs` |
 | `[TASKA_DESCRIPTION]` | One or two sentences on what GetTaska is, who it helps, what it does | Home (In focus blurb), Venture Studio (GetTaska block) |
 | `[LINKEDIN_URL]` | LinkedIn company page | Every footer "LinkedIn" link, Home JSON-LD `sameAs` |
 | `[RC_NUMBER]` | Company registration (RC) number | Every footer legal line, Privacy, Terms |
