@@ -22,7 +22,7 @@ site/
 ├── assets/
 │   ├── css/styles.css        One shared stylesheet
 │   ├── js/main.js            Menu toggle + contact mailto composer
-│   └── img/favicon.svg       Site icon (add og-image.png here, see below)
+│   └── img/                  Logo mark, favicons, apple-touch-icon, og-image.png
 ├── sitemap.xml
 ├── robots.txt
 └── README.md                 This file

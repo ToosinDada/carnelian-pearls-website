@@ -176,7 +176,7 @@ main { display: block; }
   white-space: nowrap;
 }
 .brand:hover { color: var(--ink); }
-.brand__mark { width: 26px; height: 26px; flex: 0 0 auto; }
+.brand__mark { width: 40px; height: 40px; flex: 0 0 auto; object-fit: contain; }
 .brand__name b { color: var(--carnelian); font-weight: 700; }
 
 /* Primary nav */
