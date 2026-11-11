@@ -771,7 +771,7 @@ main { display: block; }
 .phone__q { color: #fff; font-weight: 700; font-size: 1.1rem; }
 .phone__search { background: #fff; border-radius: 10px; padding: 0.6rem 0.75rem; font-size: 0.8rem; color: var(--muted); }
 .phone__grid { list-style: none; margin: 0; padding: 1rem 0.85rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; }
-.phone__grid li { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 0.7rem; font-size: 0.8rem; font-weight: 600; }
+.phone__grid li { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 0.55rem 0.6rem; font-size: 0.8rem; font-weight: 600; }
 
 /* Founder quote */
 .founder { background: var(--pearl); border-top: 1px solid var(--line); }
