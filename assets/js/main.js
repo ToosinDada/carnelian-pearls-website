@@ -59,6 +59,7 @@
   var SUBJECTS = {
     partnership: "Partnership enquiry",
     venture: "Venture Studio enquiry",
+    academy: "Academy enquiry",
     opportunity: "Opportunity enquiry",
     other: "General enquiry"
   };
