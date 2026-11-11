@@ -821,3 +821,7 @@ main { display: block; }
   .header-actions { gap: 0.4rem; }
   .btn--small { padding: 0.5rem 0.8rem; }
 }
+
+/* Secondary button on the carnelian CTA band */
+.btn--light-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,0.6); }
+.btn--light-outline:hover { background: #fff; color: var(--ink); border-color: #fff; }
