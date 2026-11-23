@@ -172,8 +172,13 @@ def main():
     shell = load_shell()
     author_ld = {"@type": "Person", "name": AUTHOR, "url": f"{SITE}/consulting/", "sameAs": [LINKEDIN]}
 
-    for p in posts:
+    for i, p in enumerate(posts):
         check_links(p, OUT)
+        nxt = posts[(i + 1) % len(posts)] if len(posts) > 1 else None
+        next_html = (f'''
+          <nav class="post-end__next" aria-label="Next article">
+            <a href="../{nxt['slug']}/"><span class="post-end__label">Next article</span><span class="post-end__title">{html.escape(nxt['title'])}</span></a>
+          </nav>''' if nxt else "")
         url = f"{SITE}/insights/{p['slug']}/"
         ld = {"@context": "https://schema.org", "@type": "Article", "headline": p["title"],
               "description": p["summary"], "datePublished": p["date"].isoformat(), "author": author_ld,
@@ -197,7 +202,7 @@ def main():
               <a class="btn btn--primary" href="../../consulting/">Work with Tosin</a>
               <a class="btn btn--secondary" href="../">More insights</a>
             </div>
-          </aside>
+          </aside>{next_html}
         </div>
       </div>
     </article>'''

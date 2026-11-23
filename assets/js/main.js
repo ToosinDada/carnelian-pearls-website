@@ -113,6 +113,13 @@
   var EMAIL = form.getAttribute("data-email") || "info@carnelianandpearls.com";
   var status = document.getElementById("form-status");
 
+  /* Preselect the category from ?topic=... (set by calls to action on other pages). */
+  try {
+    var topic = new URLSearchParams(window.location.search).get("topic");
+    var sel = form.querySelector('select[name="category"]');
+    if (topic && sel && sel.querySelector('option[value="' + topic + '"]')) { sel.value = topic; }
+  } catch (e) { /* older browsers: leave the default */ }
+
   /* Map each category value to a tidy subject line. */
   var SUBJECTS = {
     consulting: "Consulting enquiry",
