@@ -77,10 +77,15 @@
         <nav class="nav" id="primary-nav" aria-label="Primary">
           <ul class="nav__list">
             <li><a class="nav__link" href="consulting/">Consulting</a></li>
-            <li><a class="nav__link" href="partnerships/">Partnerships</a></li>
-            <li><a class="nav__link" href="venture-studio/">Venture Studio</a></li>
-            <li><a class="nav__link" href="https://academy.carnelianandpearls.com">Academy</a></li>
-            <li><a class="nav__link" href="opportunities/">Opportunities <span class="pill">Soon</span></a></li>
+            <li class="nav__group">
+              <button class="nav__link nav__trigger" type="button" aria-expanded="false" aria-controls="nav-what-we-do">What we do <span class="nav__caret" aria-hidden="true"></span></button>
+              <ul class="nav__sub" id="nav-what-we-do">
+                <li><a class="nav__link" href="partnerships/">Partnerships</a></li>
+                <li><a class="nav__link" href="venture-studio/">Venture Studio</a></li>
+                <li><a class="nav__link" href="https://academy.carnelianandpearls.com">Academy</a></li>
+                <li><a class="nav__link" href="opportunities/">Opportunities <span class="pill">Soon</span></a></li>
+              </ul>
+            </li>
             <li><a class="nav__link" href="about/">About</a></li>
           </ul>
         </nav>

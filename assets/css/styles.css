@@ -856,3 +856,73 @@ main { display: block; }
 /* Secondary button on the carnelian CTA band */
 .btn--light-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,0.6); }
 .btn--light-outline:hover { background: #fff; color: var(--ink); border-color: #fff; }
+
+/* ==========================================================================
+   22. "What we do" dropdown in the primary nav
+   Desktop: a click/tap-to-open panel (also opens on hover where the device
+   has a real pointer). Mobile: the group is always expanded inside the
+   slide-down menu, under a small label, so nothing needs an extra tap.
+   ========================================================================== */
+.nav__group { position: relative; }
+.nav__trigger {
+  background: none;
+  border: 0;
+  font: inherit;
+  font-weight: 500;
+  font-size: 0.97rem;
+  cursor: pointer;
+}
+.nav__trigger.is-current { color: var(--carnelian); }
+.nav__caret {
+  width: 0.42em;
+  height: 0.42em;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-0.15em) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+.nav__trigger[aria-expanded="true"] .nav__caret { transform: translateY(0.1em) rotate(-135deg); }
+.nav__sub { list-style: none; margin: 0; padding: 0; }
+
+@media (min-width: 880px) {
+  .nav__sub {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 60;
+    min-width: 15rem;
+    padding: 0.4rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: 0 18px 36px -18px rgba(26, 23, 20, 0.35);
+  }
+  /* Invisible bridge so the pointer can travel from trigger to panel */
+  .nav__sub::before { content: ""; position: absolute; left: 0; right: 0; top: -0.6rem; height: 0.6rem; }
+  .nav__trigger[aria-expanded="true"] + .nav__sub { display: block; }
+  .nav__sub .nav__link { display: flex; width: 100%; justify-content: space-between; }
+}
+@media (min-width: 880px) and (hover: hover) {
+  .nav__group:hover .nav__sub { display: block; }
+}
+
+@media (max-width: 879.98px) {
+  .nav__trigger {
+    pointer-events: none;
+    padding: 0.9rem 0.6rem 0.3rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .nav__trigger.is-current { color: var(--muted); }
+  .nav__caret { display: none; }
+  .nav__sub {
+    display: block;
+    margin: 0 0 0.35rem 0.6rem;
+    padding-left: 0.5rem;
+    border-left: 2px solid var(--line);
+  }
+}
