@@ -200,6 +200,7 @@ main { display: block; }
   align-items: center;
   gap: 0.4rem;
   padding: 0.5rem 0.7rem;
+  min-height: 44px;
   border-radius: 8px;
   color: var(--ink);
   text-decoration: none;
@@ -211,14 +212,14 @@ main { display: block; }
 
 .pill {
   display: inline-block;
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--carnelian-dark);
   background: color-mix(in srgb, var(--carnelian) 14%, var(--surface));
   border: 1px solid color-mix(in srgb, var(--carnelian) 30%, var(--line));
-  padding: 0.1rem 0.4rem;
+  padding: 0.15rem 0.5rem;
   border-radius: 999px;
   line-height: 1.4;
 }
@@ -279,7 +280,7 @@ main { display: block; }
 .btn--primary:hover { background: var(--carnelian-dark); border-color: var(--carnelian-dark); color: #fff; }
 .btn--secondary { background: transparent; color: var(--ink); border-color: var(--line); }
 .btn--secondary:hover { border-color: var(--carnelian); color: var(--carnelian-dark); background: var(--surface); }
-.btn--small { padding: 0.5rem 0.85rem; font-size: 0.9rem; }
+.btn--small { padding: 0.5rem 0.85rem; font-size: 0.9rem; min-height: 44px; }
 .btn--block { width: 100%; }
 
 .btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
@@ -499,8 +500,8 @@ main { display: block; }
   color: var(--muted);
   margin: 0 0 0.75rem;
 }
-.footer__col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
-.footer__col a { color: var(--ink); text-decoration: none; }
+.footer__col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.footer__col a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
 .footer__col a:hover { color: var(--carnelian-dark); text-decoration: underline; }
 .footer__legal {
   margin-top: 2.25rem;
@@ -510,7 +511,7 @@ main { display: block; }
   font-size: 0.85rem;
   line-height: 1.7;
 }
-.footer__legal a { color: var(--muted); }
+.footer__legal a { color: var(--muted); display: inline-block; padding: 0.7rem 0.4rem; }
 .footer__legal a:hover { color: var(--carnelian-dark); }
 .ext::after { content: "\2197"; font-size: 0.8em; margin-left: 0.15em; }
 
@@ -702,7 +703,7 @@ main { display: block; }
 .now__name { display: block; font-weight: 600; font-size: 1.05rem; }
 .now__meta { display: block; font-size: 0.9rem; color: #D8C9B6; }
 .tag {
-  flex: 0 0 auto; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  flex: 0 0 auto; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
   border-radius: 999px; padding: 0.3rem 0.65rem; white-space: nowrap;
 }
 .tag--live { background: #DDF2E5; color: #1C5435; }
