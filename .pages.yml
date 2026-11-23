@@ -1,0 +1,47 @@
+# Pages CMS configuration: the editing form for Insights posts.
+# Sign in at https://app.pagescms.org, open this repository, and choose "Insights posts".
+# Posts are saved to the posts/ folder; saving publishes them within a few minutes.
+
+media:
+  input: assets/img
+  output: /assets/img
+  rename: safe
+
+content:
+  - name: posts
+    label: Insights posts
+    type: collection
+    path: posts
+    format: yaml-frontmatter
+    filename: "{year}-{month}-{day}-{title}.md"
+    view:
+      primary: title
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+        description: The headline. It also becomes the web address.
+      - name: date
+        label: Publish date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+        description: A future date schedules the post to go live that day.
+      - name: summary
+        label: Summary
+        type: text
+        required: true
+        description: One or two sentences. Shown on the Insights page and in link previews.
+      - name: draft
+        label: Draft (do not publish)
+        type: boolean
+        description: Tick to keep it off the website. Note the repository is public, so drafts can still be read on GitHub.
+      - name: body
+        label: Post
+        type: rich-text
+        options:
+          format: markdown

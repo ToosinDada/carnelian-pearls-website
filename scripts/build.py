@@ -34,7 +34,7 @@ AUTHOR = "Tosin Dada"
 LINKEDIN = "https://www.linkedin.com/in/tosindada/"
 
 # Never copied into the published site.
-SKIP_TOP_LEVEL = {".git", ".github", ".gitignore", ".DS_Store", "_site", "posts", "scripts",
+SKIP_TOP_LEVEL = {".git", ".github", ".gitignore", ".pages.yml", ".DS_Store", "_site", "posts", "scripts",
                   "insights", "README.md", "WRITING-POSTS.md"}
 FILENAME = re.compile(r"^(\d{4}-\d{2}-\d{2})-(.+)\.md$")
 
