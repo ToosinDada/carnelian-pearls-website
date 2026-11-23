@@ -926,3 +926,20 @@ main { display: block; }
     border-left: 2px solid var(--line);
   }
 }
+
+/* About page: founder headshot beside the "Who leads it" text */
+.about-founder { display: flex; gap: 1.25rem; align-items: flex-start; }
+.about-founder__photo {
+  flex: 0 0 auto;
+  width: 132px;
+  height: 132px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  margin-top: 0.35rem;
+}
+.about-founder p:first-child { margin-top: 0; }
+@media (max-width: 520px) {
+  .about-founder { flex-direction: column; gap: 1rem; }
+  .about-founder__photo { width: 120px; height: 120px; margin-top: 0; }
+}
