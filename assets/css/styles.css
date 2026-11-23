@@ -784,6 +784,17 @@ main { display: block; }
 .founder__role { font-weight: 600; color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
 .founder__bio p { color: var(--muted); }
 .founder__creds { list-style: none; margin: 0 0 1.25rem; padding: 0; display: grid; gap: 0.35rem; }
+.founder__head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.founder__head .founder__role { margin-bottom: 0; }
+.founder__photo {
+  flex: 0 0 auto;
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+}
+.founder__links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; }
 
 /* Who we work with */
 .doors { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 2.5rem; grid-template-columns: 1fr; }
