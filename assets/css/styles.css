@@ -822,6 +822,37 @@ main { display: block; }
   .btn--small { padding: 0.5rem 0.8rem; }
 }
 
+/* Consulting intro: headshot beside the text on wide screens, above it on phones */
+.person-intro { display: grid; gap: 1.75rem; align-items: start; }
+.person-intro__photo {
+  width: min(180px, 50%);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+}
+@media (min-width: 880px) {
+  .person-intro { grid-template-columns: minmax(0, 1fr) 300px; gap: clamp(2rem, 5vw, 4rem); }
+  .person-intro__photo { grid-column: 2; grid-row: 1; width: 100%; position: sticky; top: calc(var(--header-h) + 1.5rem); }
+  .person-intro .prose { grid-column: 1; grid-row: 1; }
+}
+
+/* Narrow Android phones (~360px): tighten further so the menu button keeps
+   its edge padding instead of touching the screen edge. */
+@media (max-width: 400px) {
+  .brand { font-size: 0.88rem; gap: 0.35rem; }
+  .brand__mark { width: 30px; height: 30px; }
+  .btn--small { padding: 0.45rem 0.65rem; }
+}
+
+/* Smallest phones (~320px): the wordmark no longer fits beside Contact and
+   the menu button, so show the logo mark alone. The link keeps its
+   aria-label, so screen readers still announce the brand. */
+@media (max-width: 350px) {
+  .brand__name { display: none; }
+}
+
 /* Secondary button on the carnelian CTA band */
 .btn--light-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,0.6); }
 .btn--light-outline:hover { background: #fff; color: var(--ink); border-color: #fff; }
