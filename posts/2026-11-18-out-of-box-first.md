@@ -34,7 +34,7 @@ The second tool is a decision register. Programmes lose weeks to re-opening sett
 
 ## In practice
 
-I used this approach to stabilise an escalated Change Management workstream for a Saudi bank. The backlog needed to become groom-ready: epics, stories, non-functional requirements, personas and dependencies. Alongside that, I authored workflows for Minor, Standard, Significant and Major changes and an out-of-box versus new-field matrix covering the requirements.
+I used this approach to stabilise an escalated Change Management workstream for a financial-services client. The backlog needed to become groom-ready: epics, stories, non-functional requirements, personas and dependencies. Alongside that, I authored workflows for Minor, Standard, Significant and Major changes and an out-of-box versus new-field matrix covering the requirements.
 
 The result was that 80% of requirements were directed toward standard platform capability. The remaining 20% were deliberate, documented extensions, each with a reason someone could point to.
 
