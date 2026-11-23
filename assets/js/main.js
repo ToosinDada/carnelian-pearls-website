@@ -57,6 +57,7 @@
 
   /* Map each category value to a tidy subject line. */
   var SUBJECTS = {
+    consulting: "Consulting enquiry",
     partnership: "Partnership enquiry",
     venture: "Venture Studio enquiry",
     academy: "Academy enquiry",
@@ -76,6 +77,11 @@
 
     var subject = SUBJECTS[category] || "General enquiry";
 
+    /* An <option data-email="..."> sends that category to its own inbox
+       (consulting goes to Tosin directly); everything else uses EMAIL. */
+    var picked = form.querySelector('option[value="' + category + '"]');
+    var to = (picked && picked.getAttribute("data-email")) || EMAIL;
+
     var lines = [];
     lines.push(message || "(No message entered.)");
     lines.push("");
@@ -86,7 +92,7 @@
     lines.push("Enquiry type: " + subject);
 
     var href =
-      "mailto:" + EMAIL +
+      "mailto:" + to +
       "?subject=" + encodeURIComponent(subject) +
       "&body=" + encodeURIComponent(lines.join("\n"));
 
@@ -96,7 +102,7 @@
     if (status) {
       status.textContent =
         "Opening your email app with the message ready to send. " +
-        "If nothing happens, email " + EMAIL + " directly.";
+        "If nothing happens, email " + to + " directly.";
     }
   });
 })();
